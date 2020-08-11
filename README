@@ -2,7 +2,16 @@
 1.修改题目bin目录下的flag内容
 2.运行以下命令，port1和port2替换为你想映射到的本机端口
 说明：ctf为基础镜像，必须先build完成
-
+如果是ubuntu 19以上（包括19）的镜像，请将base里的Dockerfile
+```bash
+RUN cp -R /lib* /home/ctf && \
+    cp -R /usr/lib* /home/ctf
+```
+改为
+```bash
+RUN cp -R /usr/lib* /home/ctf
+```
+原因是ubuntu19以上采用了软连接模式。/lib*只是一个软链接
 cd base
 sudo docker build -t "ctf" .
 cd ../b64encode
