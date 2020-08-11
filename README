@@ -18,5 +18,5 @@ cd ../b64encode
 sudo docker build -t "b64encode" .
 cd ../truth
 sudo docker build -t "truth" .
-sudo docker run -d -p "0.0.0.0:port1:9999" -h "b64encode" --name="b64encode" b64encode
-sudo docker run -d -p "0.0.0.0:port2:9999" -h "truth" --name="truth" truth
+sudo docker run -d -p "0.0.0.0:port1:9999" -h "b64encode" --name="b64encode" --restart="always" b64encode 
+sudo docker run -d -p "0.0.0.0:port2:9999" -h "truth" --name="truth" --restart="always" truth
