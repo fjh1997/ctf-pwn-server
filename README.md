@@ -1,10 +1,10 @@
-在当前目录按以下方式创建环境
-1.修改题目bin目录下的flag内容和pwn内容
-2.修改dockerfile里的ubuntu为你想要的版本
-3.运行以下命令，port替换为你想映射到的本机端口
+在当前目录按以下方式创建环境<br>
+1.修改题目bin目录下的flag内容和pwn内容<br>
+2.修改dockerfile里的ubuntu为你想要的版本<br>
+3.运行以下命令，port替换为你想映射到的本机端口<br>
 ```bash
 sudo docker build -t "pwn" .
-sudo docker run -d -p "0.0.0.0:port1:9999" -h "pwn" --name="pwn" --restart=always pwn 
+sudo docker run -d -p "0.0.0.0:port:9999" -h "pwn" --name="pwn" --restart=always pwn 
 ```
 如果是ubuntu 19以上（包括19）的镜像，请将Dockerfile
 ```bash
